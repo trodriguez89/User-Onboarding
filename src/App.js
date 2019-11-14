@@ -9,7 +9,8 @@ import Users from "./components/Users";
 import {Route} from "react-router-dom";
 
 const BigDivStyled = styled.div`
-    
+    border: 1px solid black;
+    background-color: #E8D051;
 `;
 
 function App() {

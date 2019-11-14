@@ -22,12 +22,15 @@ const InfoDivStyle = styled.div`
 `;
 
 const IndividualDivStyle = styled.div`
-    border: 2px solid red;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 250px;
+    // margin: 0 auto;
     
 `;
 
 const ButtonStyle = styled.button`
-    background-color: blue;
+    background-color: #FFF249;
     padding: 10px;
     border-radius: 5px;
 `;
@@ -40,8 +43,10 @@ const LabelStyle = styled.label`
 
 `;
 
-const H2Style = styled.h2`
-    
+const CardContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 `
 
 
@@ -53,9 +58,9 @@ const Forms = ({ values, errors, touched, status }) => {
     }, [status])
 
     return (
-
+        <div>
         <InfoDivStyle>
-            <H2Style>Register Info</H2Style>
+            <h2>User Info</h2>
             <Form>
                 <Field
                     type="text"
@@ -93,15 +98,17 @@ const Forms = ({ values, errors, touched, status }) => {
                 {touched.termsofservice && errors.termsofservice && (<p>{errors.termsofservice}</p>)}
                 <ButtonStyle>Submit</ButtonStyle>
             </Form>
-        </InfoDivStyle>
-        <div>
+            </InfoDivStyle>
+            <CardContainer>
             {user.map(info => (
                 <IndividualDivStyle>
                     <h2>{info.name}</h2>
-                    <p>info.email</p>
-                    <p>info.password</p>
+                    <p>{info.email}</p>
+                    <p>{info.password}</p>
                 </IndividualDivStyle>
+                
             ))}
+        </CardContainer>
         </div>
     );
 }

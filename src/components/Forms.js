@@ -16,14 +16,24 @@ const Forms = ({ values }) => {
                     placeholder="name"
                 />
                 <Field
-
+                    type="email"
+                    name="email"
+                    placeholder="email"
                 />
                 <Field
-
+                    type="password"
+                    name="password"
+                    placeholder="password"
                 />
+                <label>
+                    
                 <Field
-
+                    type="checkbox"
+                    name="termsofservice"
+                    checked={values.termsofservice}
                 />
+                Agree to Terms of Service
+                </label>
                 <button>Submit</button>
             </Form>
         </div>
